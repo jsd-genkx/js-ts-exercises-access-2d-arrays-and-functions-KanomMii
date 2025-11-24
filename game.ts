@@ -1,25 +1,31 @@
 const board = [
-	["A", "B", "C"],
-	["D", "E", "F"],
-	["G", "H", "I"],
+  ["A", "B", "C"],
+  ["D", "E", "F"],
+  ["G", "H", "I"],
 ];
 
 const moves = [];
 
 // Start at A (0,0) -> [row][col]
 let row = 0;
-let col = 0; 
-moves.push(board[row][col]); // A
+let col = 0;
+moves.push(board[row][col]); // A // r0 c0 [0][0]
 
 // Move Right to B
 col++;
-moves.push(board[row][col]); // B
+moves.push(board[row][col]); // B // r0 c1 [0][1]
 
 // Move Right to C
+col++;
+moves.push(board[row][col]);
 
 // Move Down to F
+row++;
+moves.push(board[row][col]);
 
 // Move left to E
+col--;
+moves.push(board[row][col]);
 
 console.log("Path:", moves.join(" → "));
 // Output: Path: A → B → C → F → E

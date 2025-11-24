@@ -12,19 +12,34 @@ let col = 0;
 moves.push(board[row][col]); // A
 
 // Define movement functions
-function moveRight() {}
+function moveRight() {
+	col++;
+	moves.push(board[row][col]); 
+}
 
-function moveLeft() {}
+function moveLeft() {
+	col--;
+	moves.push(board[row][col]); 
 
-function moveUp() {}
+}
 
-function moveDown() {}
+function moveUp() {
+	row--;
+	moves.push(board[row][col]); 
+}
+
+function moveDown() {
+	row++;
+	moves.push(board[row][col]); 
+
+}
 
 // Call the movement functions
 moveRight(); // Move from A to B
 moveRight(); // Move from B to C
 moveDown(); // Move from C to F
 moveLeft(); // Move from F to E
+
 
 console.log("Path:", moves.join(" → "));
 console.log("Total Moves (Start from 'A'):", moves.length - 1);
